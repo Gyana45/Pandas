@@ -1,0 +1,30 @@
+- if admin_signed_in?
+  %p
+    Welcome back, #{current_admin.name}!
+  %p
+    = link_to t('admin.buttons.organizations'), admin_organizations_path, class: 'btn btn-primary'
+  %p
+    = link_to t('admin.buttons.locations'), admin_locations_path, class: 'btn btn-primary'
+  %p
+    = link_to t('admin.buttons.services'), admin_services_path, class: 'btn btn-primary'
+  %p
+    = link_to t('admin.buttons.programs'), admin_programs_path, class: 'btn btn-primary'
+
+  - if current_admin.super_admin?
+    %p
+      = link_to t('admin.buttons.add_organization'), new_admin_organization_path, class: 'btn btn-primary'
+  - if @orgs.present?
+    %p
+      = link_to t('admin.buttons.add_location'), new_admin_location_path, class: 'btn btn-primary'
+    %p
+      = link_to t('admin.buttons.add_program'), new_admin_program_path, class: 'btn btn-primary'
+
+  - if current_admin.super_admin?
+    %h2 CSV Downloads
+    - csv_tables.each do |table|
+      %p
+        = link_to t("admin.buttons.download_#{table}"),
+        send(:"admin_csv_#{table}_url"), class: 'btn btn-primary'
+
+    %hr
+    Ohana API #{link_to "v#{@version}", 'https://github.com/codeforamerica/ohana-api/blob/master/CHANGELOG.md'}

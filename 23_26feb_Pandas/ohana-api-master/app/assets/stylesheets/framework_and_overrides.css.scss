@@ -1,0 +1,51 @@
+// import the CSS framework
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+.content {
+  font-size: 16px;
+  line-height: 1.428;
+  padding: 70px 10px 60px;
+}
+
+.authform {
+  margin: 0 auto;
+  max-width: 320px;
+  padding-top: 30px;
+
+  form {
+    @extend .well;
+    @extend .well-lg;
+    padding-bottom: 40px;
+  }
+
+  .right {
+    float: right;
+  }
+
+  .button {
+    @extend .btn;
+    @extend .btn-primary;
+  }
+
+  fieldset {
+    @extend .well;
+  }
+}
+
+// scss-lint:disable SelectorFormat, IdSelector
+#error_explanation {
+  @extend .alert;
+  @extend .alert-danger;
+
+  h2 {
+    font-size: 16px;
+  }
+}
+// scss-lint:disable SelectorFormat, IdSelector
+
+.button-xs {
+  @extend .btn;
+  @extend .btn-primary;
+  @extend .btn-xs;
+}

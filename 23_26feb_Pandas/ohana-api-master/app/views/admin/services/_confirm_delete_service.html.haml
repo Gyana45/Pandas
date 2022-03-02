@@ -1,0 +1,18 @@
+.modal-dialog
+  .modal-content
+    .modal-header
+      = button_tag(type: 'button', class: 'close', data: { dismiss: 'modal' }) do
+        %span{ 'aria-hidden' => 'true' }
+          &times;
+        %span.sr-only
+          Close
+      %h4.modal-title#my-modal-label
+        Are you ABSOLUTELY sure?
+    .modal-body
+      %p
+        This action CANNOT be undone. This will delete
+        %strong
+          #{service_name || service_id}.
+    .modal-footer
+      %button.btn.btn-default{ 'data-dismiss' => 'modal' }  Close
+      = link_to t('admin.buttons.confirm_delete_service'), { action: :destroy, id: service_id, name: service_name }, method: :delete, class: 'btn btn-danger'

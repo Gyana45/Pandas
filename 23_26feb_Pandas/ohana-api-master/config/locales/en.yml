@@ -1,0 +1,425 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  activerecord:
+    attributes:
+      address: &address_attributes
+        address_1: 'Street (Line 1)'
+        address_2: 'Street (Line 2)'
+        city: 'City'
+        country: 'Country Code'
+        postal_code: 'ZIP Code'
+        state_province: 'State'
+
+      api_application:
+        name: 'Application Name'
+        main_url: 'Main URL'
+        callback_url: 'Callback URL'
+
+      contact:
+        email: 'Contact Email'
+        department: 'Contact Department'
+        phones: 'Phone Numbers'
+        title: 'Contact Title'
+
+      contact/phones:
+        number: :activerecord.attributes.phone.number
+        number_type: :activerecord.attributes.phone.number_type
+
+      holiday_schedule: &holiday_schedule_attributes
+        closed: 'Open/Closed'
+        closes_at: 'Closes At'
+        opens_at: 'Opens At'
+        end_date: 'End Date'
+        start_date: 'Start Date'
+
+      location:
+        accessibility: 'Accessibility Options'
+        address: 'Street Address'
+        admin_emails: 'Admin Emails'
+        alternate_name: 'Alternate Name'
+        phones: 'Phone Numbers'
+        transportation: 'Transportation Options'
+        short_desc: 'Short Description'
+        virtual: 'Type of Location'
+        website: 'Location Website'
+
+      location/holiday_schedules:
+        <<: *holiday_schedule_attributes
+
+      location/phones:
+        number: :activerecord.attributes.phone.number
+        number_type: :activerecord.attributes.phone.number_type
+
+      location/regular_schedules:
+        weekday: 'Weekday'
+
+      mail_address:
+        <<: *address_attributes
+
+      organization:
+        alternate_name: 'Alternate Name'
+        date_incorporated: 'Date of Incorporation'
+        funding_sources: 'Funding Sources'
+        legal_status: 'Legal Status'
+        phones: 'Phone Numbers'
+        tax_id: 'Tax Identifier'
+        tax_status: 'Tax Status'
+        website: 'Organization Website'
+
+      organization/phones:
+        number: :activerecord.attributes.phone.number
+        number_type: :activerecord.attributes.phone.number_type
+
+      phone:
+        country_prefix: 'Country Prefix Code'
+        number: 'Number'
+        number_type: 'Number Type'
+        vanity_number: 'Vanity Number'
+
+      program:
+        alternate_name: 'Alternate Name'
+
+      service:
+        alternate_name: 'Alternate Name'
+        application_process: 'Application Process'
+        funding_sources: 'Funding Sources'
+        interpretation_services: 'Interpretation Services'
+        phones: 'Phone Numbers'
+        program_id: 'Service Program'
+        service_areas: 'Service Areas'
+        wait_time: 'Wait Time'
+        website: 'Service Website'
+
+      service/phones:
+        number: :activerecord.attributes.phone.number
+        number_type: :activerecord.attributes.phone.number_type
+
+  admin:
+    api_location: 'San Mateo County'
+
+    buttons:
+      organizations: 'Organizations'
+      locations: 'Locations'
+      services: 'Services'
+      programs: 'Programs'
+      add_organization: 'Add a new organization'
+      create_organization: 'Create organization'
+      delete_organization: 'Permanently delete this organization'
+      confirm_delete_organization: 'I understand the consequences, delete this organization'
+      add_location: 'Add a new location'
+      create_location: 'Create location'
+      delete_location: 'Permanently delete this location'
+      confirm_delete_location: 'I understand the consequences, delete this location'
+      add_program: 'Add a new program'
+      create_program: 'Create program'
+      delete_program: 'Permanently delete this program'
+      confirm_delete_program: 'I understand the consequences, delete this program'
+      add_service: 'Add a new service'
+      create_service: 'Create service'
+      delete_service: 'Permanently delete this service'
+      confirm_delete_service: 'I understand the consequences, delete this service'
+      add_contact: 'Add a new contact'
+      create_contact: 'Create contact'
+      delete_contact: 'Permanently delete this contact'
+      add_street_address: 'Add a street address'
+      delete_street_address: 'Delete this address permanently'
+      add_mailing_address: 'Add a mailing address'
+      delete_mailing_address: 'Delete this mailing address permanently'
+      add_phone: 'Add a new phone number'
+      delete_phone: 'Delete this phone permanently'
+      add_hours_of_operation: 'Add hours of operation'
+      add_holiday_schedule: 'Add holiday schedule'
+      remove_holiday_schedule: 'Remove this holiday schedule'
+      add_admin: 'Add a new admin email'
+      delete_admin: 'Delete this admin permanently'
+      add_keyword: 'Add a new keyword'
+      delete_keyword: 'Delete this keyword permanently'
+      save_changes: 'Save changes & apply edits to database'
+      delete_symbol: 'x'
+      download_addresses: 'Download Addresses'
+      download_contacts: 'Download Contacts'
+      download_holiday_schedules: 'Download Holiday Schedules'
+      download_locations: 'Download Locations'
+      download_mail_addresses: 'Download Mail Addresses'
+      download_organizations: 'Download Organizations'
+      download_phones: 'Download Phones'
+      download_programs: 'Download Programs'
+      download_regular_schedules: 'Download Regular Schedules'
+      download_services: 'Download Services'
+
+    locations:
+      forms:
+        accessibility:
+          description: 'Which accessibility amenities are available at this location?'
+
+        address:
+          description: 'The physical location.'
+
+        admin_emails:
+          description: 'Which email addresses should be allowed to update and delete this location?'
+
+        description:
+          description: "A description of the location's services."
+
+        languages:
+          placeholder: 'Select one or more languages'
+
+        phone_fields:
+          number_type:
+            prompt: 'Choose an option'
+
+        phones:
+          description: 'If the phone number belongs to a contact, please move it to the existing contact, or add a new contact.'
+
+        holiday_schedule_fields:
+          enter_hours: 'If open, enter the opening and closing hours below'
+
+        regular_schedule_fields:
+          weekday:
+            include_blank: 'Day'
+
+        short_desc:
+          description: 'A short summary of the description of services.'
+
+        transportation:
+          description: 'What public transportation options are nearby? (Bus stops, train stations, etc.)'
+
+        virtual:
+          description: 'Does this location have a physical address?'
+
+    not_authorized: 'You are not authorized to perform this action.'
+
+    notices:
+      zip_file_generation: >
+        Your zip file is being generated. Please refresh the page in a few
+        seconds. Once it's ready, the button at the bottom will change from
+        'Generate zip file' to 'Download zip file'.
+      wait_for_zip_file: 'Please wait while the zip file is being generated.'
+
+    organizations:
+      forms:
+        accreditations:
+          description: 'You can enter multiple terms in this box by pressing the comma key after each one.'
+
+        date_incorporated:
+          description: 'The date the organization was incorporated.'
+
+        description:
+          description: 'A description of what the organization does.'
+
+        legal_status:
+          description: 'The conditions this organization is operating under (e.g. non-profit, private corporation or a government organization).'
+
+        licenses:
+          description: 'You can enter multiple terms in this box by pressing the comma key after each one.'
+
+        tax_id:
+          description: 'Tax identifier such as the Federal Employer Identification Number.'
+
+        tax_status:
+          description: 'Internal Revenue Service tax designation, such as 501(c)(3).'
+
+    services:
+      forms:
+        accepted_payments:
+          placeholder: 'Select one or more payment methods'
+
+        application_process:
+          description: 'How does a client apply to receive services, if applicable?'
+
+        audience:
+          description: 'What groups are served, if not everyone?'
+
+        categories:
+          description: 'What categories best describe this service?'
+
+        description:
+          description: 'A description of the service.'
+
+        eligibility:
+          description: 'What criteria must served groups meet to receive service?'
+
+        fees:
+          description: 'Are there any fees to receive this service?'
+
+        interpretation_services:
+          description: 'What kind of interpretation services are available?'
+
+        keywords:
+          description: >
+            The best way to ensure a service appears in search results is to write
+            a detailed and accurate service description. If certain words or phrases
+            cannot be part of the description, such as common misspellings, then the
+            keywords field is where you can add them. You can enter multiple
+            keywords in this box by pressing the comma key after each one.
+
+        languages:
+          placeholder: :admin.locations.forms.languages.placeholder
+
+        program:
+          description: 'If this service is associated with a program, enter it below.'
+          include_blank: 'This service is not part of any program'
+
+        required_documents:
+          placeholder: 'Select one or more required documents'
+
+        service_areas:
+          description: 'What city or county does the location serve?'
+          placeholder: 'Select one or more service areas'
+
+        status:
+          description: 'Is this service active, inactive, or defunct?'
+
+        wait:
+          description: 'How long on average does a client need to wait to receive services?'
+
+    shared:
+      forms:
+        alternate_name:
+          description: 'Is this %{type} known by another name?'
+
+        choose_org:
+          placeholder: 'Choose an organization'
+
+        email:
+          description: "The %{type}'s general email."
+
+        funding_sources:
+          description: 'How is this %{type} funded?'
+          placeholder: 'Select one or more funding sources'
+
+  enumerize:
+    location:
+      accessibility:
+        cd: "Information on CD"
+        deaf_interpreter: "Interpreter for the deaf"
+        disabled_parking: "Disabled Parking"
+        elevator: "Elevator"
+        ramp: "Ramp"
+        restroom: "Disabled Restroom"
+        tape_braille: "Information on tape or in Braille"
+        tty: "TTY"
+        wheelchair: "Wheelchair"
+        wheelchair_van: "Wheelchair-accessible van"
+
+    phone:
+      number_type:
+        fax: "Fax"
+        hotline: "Hotline"
+        sms: "SMS"
+        tty: "TTY"
+        voice: "Voice"
+
+  errors:
+    messages:
+      blank_for_address: "can't be blank for Address"
+      blank_for_category: "can't be blank for Category"
+      blank_for_contact: "can't be blank for Contact"
+      blank_for_hs: "can't be blank for Holiday Schedule"
+      blank_for_hs_open: "can't be blank for Holiday Schedule when open on that day"
+      blank_for_location: "can't be blank for Location"
+      blank_for_mail_address: "can't be blank for Mail Address"
+      blank_for_org: "can't be blank for Organization"
+      blank_for_phone: "can't be blank for Phone"
+      blank_for_program: "can't be blank for Program"
+      blank_for_rs: "can't be blank for Regular Schedule"
+      blank_for_service: "can't be blank for Service"
+      duplicate_taxonomy_id: 'id has already been taken'
+      invalid_date: 'is not a valid date'
+      invalid_email: 'is not a valid email'
+      invalid_fax: 'is not a valid US fax number'
+      invalid_phone: 'is not a valid US phone or fax number'
+      invalid_service_area: 'is not a valid service area'
+      invalid_state_province: 'Please enter a valid 2-letter state or province abbreviation'
+      invalid_url: 'is not a valid URL'
+      invalid_weekday: 'is not a valid weekday'
+      invalid_zip: 'is not a valid ZIP code'
+      no_address: "must be provided unless a Location is virtual"
+      not_an_array: 'is not an Array.'
+
+  helpers:
+    label:
+      address: &address_helper_labels
+        state_province: 'State (2-letter abbreviation)'
+        country: 'ISO 3361-1 2-letter Country Code'
+
+      holiday_schedule:
+        closed: 'Closed or open during the above dates?'
+
+      location:
+        admin_emails: 'Add an admin to this location'
+        name: 'Location Name'
+
+      mail_address:
+        <<: *address_helper_labels
+
+      organization:
+        name: 'Organization Name'
+
+      phone:
+        country_prefix: 'Country Prefix Code (for example: 1)'
+        extension: 'Extension (numbers only)'
+        number_type: 'Number Type (Fax, Hotline, Voice, SMS, or TTY)'
+        vanity_number: 'Vanity Number (for example: 650-123-HELP)'
+
+      program:
+        name: 'Program Name'
+        organization_id: 'Choose an organization to create this program for.'
+
+      service:
+        name: 'Service Name'
+
+      user:
+        password_confirmation: 'Confirm password'
+
+  titles:
+    brand: "Ohana API"
+    admin: "%{brand} Admin"
+    developer: "%{brand} Developers"
+
+  navigation:
+    edit_account: 'Edit account'
+    your_apps: 'Your apps'
+    sign_in: 'Sign in'
+    sign_in_with: 'Sign in with'
+    sign_up: 'Sign up'
+    sign_out: 'Sign out'
+    forgot_your_password: 'Forgot your password?'
+    no_confirmation_instructions: "Didn't receive confirmation instructions?"
+    no_unlock_instructions: "Didn't receive unlock instructions?"
+
+  buttons:
+    update: 'Update'
+    cancel_my_account: 'Cancel my account'
+    resend_confirmation_instructions: 'Resend confirmation instructions'
+    send_reset_password_instructions: 'Send me reset password instructions'
+    change_my_password: 'Change my password'
+    register_application: 'Register application'
+    register_new_application: 'Register new application'
+    register_a_new_applicaiton: 'Register a new application'
+    update_application: 'Update application'
+    delete_application: 'Delete application'
+
+  links:
+    register_a_new_application: 'Register a new application'
+    view: 'view'

@@ -1,0 +1,12 @@
+.inst-box.phones
+  %header
+    %strong
+      Phone Numbers
+    - unless f.object.instance_of?(Contact)
+      %p.desc
+        %em
+          = t('.description')
+
+  = f.fields_for :phones do |builder|
+    = render 'admin/locations/forms/phone_fields', f: builder
+  = link_to_add_fields t('admin.buttons.add_phone'), f, :phones

@@ -1,0 +1,18 @@
+.inst-box.admin_emails
+  %header
+    %strong
+      = f.label :admin_emails
+    %p.desc
+      = t('.description')
+
+  - if f.object.new_record? && !current_admin.super_admin?
+    = render 'admin/locations/forms/admin_email_fields_for_new_location'
+  - elsif location.admin_emails.present?
+    - location.admin_emails.each_with_index do |admin, i|
+      = field_set_tag do
+        .row
+          %div{ class: "col-sm-6 #{error_class_for(location, :admin_emails, admin)}" }
+            = email_field_tag 'location[admin_emails][]', admin, class: 'form-control', id: "location_admin_emails_#{i}"
+        = link_to t('admin.buttons.delete_admin'), '#', class: 'btn btn-danger delete_attribute'
+        %hr
+  = link_to_add_array_fields t('admin.buttons.add_admin'), :locations, :admin_email

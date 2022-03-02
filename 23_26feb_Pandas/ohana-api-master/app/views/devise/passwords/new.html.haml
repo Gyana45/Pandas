@@ -1,0 +1,12 @@
+.authform
+  = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, role: 'form' }) do |f|
+    %h3 Forgot your password?
+    %p
+      Enter the email you signed up with, and we'll send you password reset instructions.
+    = render 'devise/shared/error_messages', resource: resource
+    .form-group
+      = f.label :email
+      = f.email_field :email, autofocus: true, class: 'form-control'
+    = f.submit t('buttons.send_reset_password_instructions'), class: 'button center'
+    %br
+  = render 'devise/shared/links'

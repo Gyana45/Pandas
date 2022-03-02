@@ -1,0 +1,10 @@
+.inst-box
+  %header
+    %strong
+      = f.label :categories
+    %p.desc
+      = t('.description')
+
+  = hidden_field_tag 'service[category_ids][]', nil
+  = field_set_tag nil, id: 'categories' do
+    = nested_categories

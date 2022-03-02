@@ -1,0 +1,14 @@
+.authform
+  = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, role: 'form' }) do |f|
+    %h3 Change your password
+    = render 'devise/shared/error_messages', resource: resource
+    = f.hidden_field :reset_password_token
+    .form-group
+      = f.label :password
+      = f.password_field :password, autofocus: true, autocomplete: 'off', class: 'form-control'
+    .form-group
+      = f.label :password_confirmation
+      = f.password_field :password_confirmation, autocomplete: 'off', class: 'form-control'
+    = f.submit t('buttons.change_my_password'), class: 'button right'
+    %br
+  = render 'devise/shared/links'

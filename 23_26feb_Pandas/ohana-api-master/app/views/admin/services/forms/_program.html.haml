@@ -1,0 +1,8 @@
+.inst-box.program
+  %header
+    = f.label :program_id
+    %span.desc
+      = t('.description')
+
+  %p
+    = program_autocomplete_field_for(f, location)
